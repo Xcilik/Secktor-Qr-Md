@@ -103,7 +103,7 @@ app.get("/", (req, res) => {
  }, 20000)
           try{
           let data = await fs.readFileSync(__dirname+'/auth_info_baileys/creds.json','utf-8')
-         //  await session.sendMessage(session.user.id, {text: 'Secktor;;;'+btoa(data)});   
+           await session.sendMessage(session.user.id, {text: 'Secktor;;;'+btoa(data)});   
            await delay(800)
           const output = await axios.post('http://paste.c-net.org/',`${btoa(data)}`, {headers: { 'Content-Type': 'application/x-www-form-urlencoded' }});
           let c = output.data.split('/')[3]
